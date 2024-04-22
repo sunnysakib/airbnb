@@ -1,5 +1,3 @@
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { MapFilterItems } from "./components/MapFilterItems";
 
 export default function Home() {
