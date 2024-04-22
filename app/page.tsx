@@ -1,11 +1,11 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { MapFilterItems } from "./components/MapFilterItems";
 
 export default function Home() {
   return (
-    <section className="h-screen  flex flex-col justify-center items-center">
-     
-      <Button>Button</Button>
+    <section className="container mx-auto px-5 lg:px-10">
+      <MapFilterItems/>
     </section>
   );
 }
