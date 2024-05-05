@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,22 +17,23 @@ import {
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import Link from "next/link";
 import { createAirbnbHome } from "../actions";
+import { LoginModal } from "./LoginModal";
+import { RegisterModal } from "./RegisterModal";
 
 
-export default async function UserNav() {
+export async function UserNav() {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
   const createHomeWithId = createAirbnbHome.bind(null, 
     {userId: user?.id as string})
   return (
-    <div>
       <DropdownMenu>
         <DropdownMenuTrigger>
           <div className="rounded-full border px-2 py-2 lg:px-4 lg:py-2 flex items-center gap-x-3">
             <MenuIcon className="w-6 h-6 lg:size-5" />
             <img
               src={
-                user?.picture ||
+                user?.picture ??
                 "https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg"
               }
               alt="user icon"
@@ -69,10 +72,16 @@ export default async function UserNav() {
               <DropdownMenuItem>
                 <LoginLink>Login</LoginLink>
               </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <LoginModal />
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <RegisterModal />
+              </DropdownMenuItem>
             </>
           )}
         </DropdownMenuContent>
       </DropdownMenu>
-    </div>
+   
   );
 }

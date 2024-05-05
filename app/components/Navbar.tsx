@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import DesktopLogo from '../../public/assets/images/airbnb-desktop.png'
 import MobileLogo from '../../public/assets/images/airbnb-mobile.webp'
-import UserNav from "./UserNav";
+import { UserNav } from "./UserNav";
 export default function Navbar () {
     return (
         <nav className="w-full border-b">
@@ -22,6 +22,7 @@ export default function Navbar () {
                     Airbnb search
                 </div>
                 <UserNav/>
+                
             </div>
         </nav>
     );
