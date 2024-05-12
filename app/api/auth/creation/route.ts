@@ -1,11 +1,10 @@
 import prisma from '@/app/lib/db';
-import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
+import { auth } from '@/auth';
 import { NextResponse } from 'next/server';
 
 export async function GET(){
-    const {getUser} = getKindeServerSession();
-    
-    const user = await getUser();
+    const session = await auth()
+    const user = session?.user;
 
     if(!user || user === null || !user.id ){
         throw new Error('User not found');
@@ -22,9 +21,8 @@ export async function GET(){
             data: {
                 id: user.id,
                 email: user.email ?? "",
-                firstName: user.given_name ?? "",
-                lastName: user.family_name ?? "",
-                profileImage: user.picture ?? `https://avatar.vercel.sh/${user.given_name}`,
+                name: user.name ?? "",
+                profileImage: user.image ?? `https://avatar.vercel.sh/${user.name}`,
             }
         });
     }

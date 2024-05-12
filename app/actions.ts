@@ -20,7 +20,6 @@ export async function createAirbnbHome ({userId}: {userId: string}) {
                 userId: userId,
             }
         });
-
         return redirect(`/create/${data.id}/structure`);
     }
     else if (!data.addedCategory && !data.addedDescription && !data.addedLocation){
