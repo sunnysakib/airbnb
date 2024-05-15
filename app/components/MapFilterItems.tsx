@@ -21,7 +21,7 @@ export function MapFilterItems() {
         [searchParams]
       )
     return (
-        <div className="flex xl:gap-x-14 gap-x-10 mt-5 w-full overflow-x-scroll no-scrollbar justify-center">
+        <div className="flex xl:gap-x-14 gap-x-10 mt-5 w-full overflow-x-scroll no-scrollbar justify-between">
             {
                 categoryItems.map(item => (
                     <Link key={item.id} href={pathname + '?' + createQueryString('filter', item.name)} className={cn(

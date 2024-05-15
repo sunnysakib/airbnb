@@ -1,5 +1,5 @@
 import { createCategoryPage } from "@/app/actions";
-import { CreatioBottomBar } from "@/app/components/CreatioBottomBar";
+import { CreatioBottomBar } from "@/app/components/CreationBottomBar";
 import { SelectCategory } from "@/app/components/SelectCategory";
 
 

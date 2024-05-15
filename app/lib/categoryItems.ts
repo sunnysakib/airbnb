@@ -111,4 +111,52 @@ interface item {
       imageUrl:
         "https://a0.muscache.com/pictures/957f8022-dfd7-426c-99fd-77ed792f6d7a.jpg",
     },
+    {
+      id: 13,
+      name: "Top of the world",
+      description: "This Property is located near to top of the world",
+      title: "Top of the world",
+      imageUrl:
+        "https://a0.muscache.com/pictures/248f85bf-e35e-4dc3-a9a1-e1dbff9a3db4.jpg",
+    },
+    {
+      id: 14,
+      name: "Island",
+      description: "This Property is located near island",
+      title: "Island",
+      imageUrl:
+        "https://a0.muscache.com/pictures/8e507f16-4943-4be9-b707-59bd38d56309.jpg",
+    },
+    {
+      id: 15,
+      name: "A-frames",
+      description: "This Property is located near A-frames",
+      title: "A-frames",
+      imageUrl:
+        "https://a0.muscache.com/pictures/1d477273-96d6-4819-9bda-9085f809dad3.jpg",
+    },
+    {
+      id: 16,
+      name: "New",
+      description: "This Property is New",
+      title: "New",
+      imageUrl:
+        "https://a0.muscache.com/pictures/c0fa9598-4e37-40f3-b734-4bd0e2377add.jpg",
+    },
+    {
+      id: 17,
+      name: "Farm",
+      description: "This Property is Farm",
+      title: "Farm",
+      imageUrl:
+        "https://a0.muscache.com/pictures/aaa02c2d-9f0d-4c41-878a-68c12ec6c6bd.jpg",
+    },
+    {
+      id: 18,
+      name: "Golfing",
+      description: "This Property is Golfing",
+      title: "Golfing",
+      imageUrl:
+        "https://a0.muscache.com/pictures/6b639c8d-cf9b-41fb-91a0-91af9d7677cc.jpg",
+    },
   ];

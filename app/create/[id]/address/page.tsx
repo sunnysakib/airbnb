@@ -1,6 +1,6 @@
 "use client";
 import { createAddress } from "@/app/actions";
-import { CreatioBottomBar } from "@/app/components/CreatioBottomBar";
+import { CreatioBottomBar } from "@/app/components/CreationBottomBar";
 
 import { useCountries } from "@/app/lib/getCountries";
 import {

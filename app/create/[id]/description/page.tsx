@@ -1,6 +1,6 @@
 import { createDescription } from "@/app/actions";
 import { Counter } from "@/app/components/Counter";
-import { CreatioBottomBar } from "@/app/components/CreatioBottomBar";
+import { CreatioBottomBar } from "@/app/components/CreationBottomBar";
 import { Card, CardHeader } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
