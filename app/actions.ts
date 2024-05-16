@@ -1,5 +1,6 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import prisma from "./lib/db";
 import { supabase } from "./lib/supabase";
@@ -108,4 +109,31 @@ export async function createAddress(formData: FormData) {
     },
   });
   return redirect("/");
+}
+
+export async function createFavorite(formData: FormData) {
+  const homeId = formData.get("homeId") as string;
+  const userId = formData.get("userId") as string;
+
+  const data = await prisma.favorite.create({
+    data: {
+      homeId: homeId,
+      userId: userId,
+    },
+  })
+
+  revalidatePath('/')
+}
+export async function DeleteFavorite(formData: FormData) {
+  const favoriteId = formData.get("favoriteId") as string;
+  const userId = formData.get("userId") as string;
+
+  const data = await prisma.favorite.delete({
+    where: {
+      id: favoriteId,
+      userId: userId,
+    }
+  })
+
+  revalidatePath('/')
 }
