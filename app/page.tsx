@@ -61,7 +61,7 @@ export default async function Home({
 function SkeletonLoading() {
   const skeletonCount = 10;
   return (
-    <div className="grid lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8">
+    <div className="grid 2xl:grid-cols-6 lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8">
        {Array.from({ length: skeletonCount }).map((_, index) => (
         <ListingsCardSkeleton key={index} />
       ))}
