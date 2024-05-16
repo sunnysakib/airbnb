@@ -6,7 +6,9 @@ import prisma from "./lib/db";
 
  export async function getData({
   searchParams,
+  userId,
 }: {
+  userId?: string | undefined;
   searchParams?: {
     filter?: string;
   };
