@@ -27,7 +27,7 @@ model User {
   sessions      Session[]
 
   Home Home[]
-  Favorite Fovorite[]
+  Favorite Favorite[]
 
 }
 
@@ -93,14 +93,14 @@ model Home {
   addedDescription Boolean @default(false)
   addedLocation    Boolean @default(false)
 
-  Fovorite Fovorite[]
+  Favorite Favorite[]
 
   createdAt DateTime @default(now())
   User      User?    @relation(fields: [userId], references: [id])
   userId    String?
 }
 
-model Fovorite {
+model Favorite {
  id String @id @default(uuid())
 
   User   User?   @relation(fields: [userId], references: [id])

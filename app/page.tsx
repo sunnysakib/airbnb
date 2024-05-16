@@ -26,6 +26,11 @@ import prisma from "./lib/db";
       price: true,
       description: true,
       country: true,
+      Favorite: {
+        where: {
+          userId: userId ?? undefined,
+        }
+      }
     },
   });
 
@@ -38,7 +43,7 @@ export default async function Home({
     filter?: string;
   };
 }) {
-  const data = await getData({ searchParams: searchParams });
+  const data = await getData({ searchParams: searchParams,  });
   return (
     <section className="2xl:px-20 mx-auto px-5 lg:px-10">
       <MapFilterItems />

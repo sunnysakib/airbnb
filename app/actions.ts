@@ -114,6 +114,7 @@ export async function createAddress(formData: FormData) {
 export async function createFavorite(formData: FormData) {
   const homeId = formData.get("homeId") as string;
   const userId = formData.get("userId") as string;
+  const pathName = formData.get("pathName") as string;
 
   const data = await prisma.favorite.create({
     data: {
@@ -122,11 +123,12 @@ export async function createFavorite(formData: FormData) {
     },
   })
 
-  revalidatePath('/')
+  revalidatePath(pathName)
 }
 export async function DeleteFavorite(formData: FormData) {
   const favoriteId = formData.get("favoriteId") as string;
   const userId = formData.get("userId") as string;
+  const pathName = formData.get("pathName") as string;
 
   const data = await prisma.favorite.delete({
     where: {
@@ -135,5 +137,5 @@ export async function DeleteFavorite(formData: FormData) {
     }
   })
 
-  revalidatePath('/')
+  revalidatePath(pathName)
 }
