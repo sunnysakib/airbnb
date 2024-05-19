@@ -12,11 +12,11 @@ import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import logo from "../../public/assets/images/google.png";
 
-export  function LoginModal() {
+export  function LoginModal({title}: {title: string}) {
   return (
     <Dialog>
       <DialogTrigger className="w-full text-sm text-left cursor-pointer px-2 py-1.5 transition-colors rounded-sm hover:bg-accent">
-        Login
+        {title}
       </DialogTrigger>
 
       <DialogContent>

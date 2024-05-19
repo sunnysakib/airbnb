@@ -69,7 +69,7 @@ export async function UserNav() {
         ) : (
           <>
             <DropdownMenuItem asChild>
-              <LoginModal />
+              <LoginModal title={"Login"} />
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
               <RegisterModal />
