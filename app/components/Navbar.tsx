@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import DesktopLogo from '../../public/assets/images/airbnb-desktop.png'
 import MobileLogo from '../../public/assets/images/airbnb-mobile.webp'
+import { SearchComponent } from "./SearchComponent";
 import { UserNav } from "./UserNav";
 export default function Navbar () {
     
@@ -19,9 +20,7 @@ export default function Navbar () {
                 />
                 </Link>
                 
-                <div className=" rounded-full border px-5 py-2">
-                    Airbnb search
-                </div>
+                <SearchComponent/>
                 {/*  @ts-expect-error Async Server Component  */}
                 <UserNav/>
                 
