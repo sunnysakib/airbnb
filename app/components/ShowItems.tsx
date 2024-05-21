@@ -1,8 +1,50 @@
-import { getData } from "../page";
 import { ListingsCard } from "./ListingsCard";
 import EmptyList from "./EmptyList";
 import { auth } from "@/auth";
+import { unstable_noStore as noStore } from "next/cache";
+import prisma from "../lib/db";
 
+async function getData({
+  searchParams,
+  userId,
+}: {
+  userId?: string | undefined;
+  searchParams?: {
+    filter?: string;
+    country?: string;
+    guest?: string;
+    room?: string;
+    bathroom?: string;
+  };
+}) {
+  noStore();
+  const data = await prisma.home.findMany({
+    where: {
+      addedCategory: true,
+      addedDescription: true,
+      addedLocation: true,
+      category: searchParams?.filter ?? undefined,
+      country: searchParams?.country ?? undefined,
+      guests: searchParams?.guest ?? undefined,
+      bedrooms: searchParams?.room ?? undefined,
+      bathrooms: searchParams?.bathroom ?? undefined,
+    },
+    select: {
+      photo: true,
+      id: true,
+      price: true,
+      description: true,
+      country: true,
+      Favorite: {
+        where: {
+          userId: userId ?? undefined,
+        }
+      }
+    },
+  });
+
+  return data;
+}
 export async function ShowItems({
   searchParams,
 }: {
