@@ -3,7 +3,7 @@ import ListingsCardSkeleton from "./components/ListingsCardSkeleton";
 import { MapFilterItems } from "./components/MapFilterItems";
 import { ShowItems } from "./components/ShowItems";
 import prisma from "./lib/db";
-
+import { unstable_noStore as noStore } from "next/cache";
  export async function getData({
   searchParams,
   userId,
@@ -17,6 +17,7 @@ import prisma from "./lib/db";
     bathroom?: string;
   };
 }) {
+  noStore();
   const data = await prisma.home.findMany({
     where: {
       addedCategory: true,

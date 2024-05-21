@@ -16,11 +16,11 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { SelectCalender } from "@/app/components/SelectCalender";
 import { auth } from "@/auth";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { LoginModal } from "@/app/components/LoginModal";
-import { createReservation } from "@/app/actions";
 
+import { createReservation } from "@/app/actions";
+import { unstable_noStore as noStore } from "next/cache";
 async function getData(homeid: string) {
+  noStore();
   const data = await prisma.home.findUnique({
     where: {
       id: homeid,
