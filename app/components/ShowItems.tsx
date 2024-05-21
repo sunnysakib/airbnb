@@ -39,8 +39,8 @@ export async function ShowItems({
             ))}
           </div>
         ) : (
-          <EmptyList  title="Hey you don't have any listings"
-          description="Please add homes to see them right here..." />
+          <EmptyList  description="Please check a other category or create your own listing!"
+          title="Sorry no listings found for this category..."/>
         )}
       </div>
     </>

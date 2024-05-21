@@ -11,6 +11,10 @@ import prisma from "./lib/db";
   userId?: string | undefined;
   searchParams?: {
     filter?: string;
+    country?: string;
+    guest?: string;
+    room?: string;
+    bathroom?: string;
   };
 }) {
   const data = await prisma.home.findMany({
@@ -19,6 +23,10 @@ import prisma from "./lib/db";
       addedDescription: true,
       addedLocation: true,
       category: searchParams?.filter ?? undefined,
+      country: searchParams?.country ?? undefined,
+      guests: searchParams?.guest ?? undefined,
+      bedrooms: searchParams?.room ?? undefined,
+      bathrooms: searchParams?.bathroom ?? undefined,
     },
     select: {
       photo: true,
@@ -41,6 +49,10 @@ export default async function Home({
 }: {
   searchParams?: {
     filter?: string;
+    country?: string;
+    guest?: string;
+    room?: string;
+    bathroom?: string;
   };
 }) {
   const data = await getData({ searchParams: searchParams,  });
