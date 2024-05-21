@@ -45,7 +45,7 @@ import { unstable_noStore as noStore } from "next/cache";
 
   return data;
 }
-export default async function Home({
+export default function Home({
   searchParams,
 }: {
   searchParams?: {
@@ -56,7 +56,6 @@ export default async function Home({
     bathroom?: string;
   };
 }) {
-  const data = await getData({ searchParams: searchParams,  });
   return (
     <section className="2xl:px-20 mx-auto px-5 lg:px-10">
       <MapFilterItems />
